@@ -1,7 +1,7 @@
 # Script for renewing LetsEncrypt certificates
 
 # CD to workdir of docker-compose
-cd $HOME/DockerImages/homeassistant_rpi
+cd $HOME/HomeAssistantDockerRpi/homeassistant_rpi
 
 # Stopping Nginx-server container
 docker-compose stop nginx
