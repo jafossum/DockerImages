@@ -8,21 +8,24 @@ services:
   nginx:
     image: nginx-server-rpi
     build: ./nginx_rpi/
+    expose:
+      - 80
+      - 443
     volumes:
       - /etc/letsencrypt:/etc/letsencrypt:ro
-    network_mode: "host"
     restart: unless-stopped
 
   # Cron running DuckDNS
   cron:
     image: cron-server-rpi
     build: ./cron_rpi/
-    network_mode: "host"
     restart: unless-stopped
 
   ha:
     # Home Assistant Image
     image: homeassistant/raspberrypi3-homeassistant
+    expose:
+      - 8123
     volumes:
       - /home/pi/homeassistant_docker:/config
       - /etc/localtime:/etc/localtime:ro
@@ -30,5 +33,4 @@ services:
       - /usr/bin/ssl-cert-check:/usr/bin/ssl-cert-check:ro
     devices:
       - /dev/ttyACM0:/dev/ttyACM0
-    network_mode: "host"
     restart: unless-stopped
