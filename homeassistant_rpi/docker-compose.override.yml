@@ -8,5 +8,6 @@ services:
   cron:
     network_mode: "host"
 
+  # The reason for host mode is because of HA AutoDiscovery features
   ha:
     network_mode: "host"
