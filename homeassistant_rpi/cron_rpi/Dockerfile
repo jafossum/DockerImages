@@ -14,4 +14,6 @@ RUN chmod 644 /etc/cron.d/nginx_cron
 COPY ./resources/secret /duckdns/duck.sh
 RUN chmod +x /duckdns/duck.sh
 
-CMD ["cron", "-f"]
+ENTRYPOINT ["cron"]
+
+CMD ["-f"]
