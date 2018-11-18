@@ -30,7 +30,6 @@ services:
       - /home/pi/homeassistant_docker:/config
       - /etc/localtime:/etc/localtime:ro
       - /etc/letsencrypt:/etc/letsencrypt:ro
-      - /usr/bin/ssl-cert-check:/usr/bin/ssl-cert-check:ro
     devices:
       - /dev/ttyACM0:/dev/ttyACM0
     restart: unless-stopped
