@@ -30,6 +30,7 @@ services:
       - /home/pi/homeassistant_docker:/config
       - /etc/localtime:/etc/localtime:ro
       - /etc/letsencrypt:/etc/letsencrypt:ro
+      - /var/log/fail2ban.log:/var/log/fail2ban.log:ro
     devices:
       - /dev/ttyACM0:/dev/ttyACM0
     restart: unless-stopped
