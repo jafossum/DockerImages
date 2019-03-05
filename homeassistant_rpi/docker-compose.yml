@@ -27,7 +27,7 @@ services:
     expose:
       - 8123
     volumes:
-      - /home/pi/homeassistant_docker:/config
+      - /home/pi/HomeAssistantConfig:/config
       - /etc/localtime:/etc/localtime:ro
       - /etc/letsencrypt:/etc/letsencrypt:ro
       - /var/log/fail2ban.log:/var/log/fail2ban.log:ro
