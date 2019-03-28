@@ -23,7 +23,7 @@ services:
 
   ha:
     # Home Assistant Image
-    image: homeassistant/raspberrypi3-homeassistant
+    image: homeassistant/raspberrypi3-homeassistant:${HA_VERSION}
     expose:
       - 8123
     volumes:
