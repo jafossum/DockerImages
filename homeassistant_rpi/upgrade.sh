@@ -1,5 +1,10 @@
 # Pull the latest remote images, restart and optionally clean the setup
 
+# Ask for explicit HA Version to pull
+echo -n "Enter HomeAssistant version to use: "
+read ha_v
+export HA_VERSION=$ha_v
+
 # Pull image
 echo "Pulling last image(s) for ${PWD}..."
 docker-compose pull
